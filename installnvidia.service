@@ -1,0 +1,10 @@
+[Unit]
+Description=Run nvidia.sh on reboot once
+
+[Service]
+Type=oneshot
+ExecStart=
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

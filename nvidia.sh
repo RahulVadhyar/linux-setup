@@ -9,4 +9,5 @@ dnf upgrade -y
 dnf install akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686
 akmod --force
 dracut --force
+systemctl disable installnvidia.service
 systemctl reboot

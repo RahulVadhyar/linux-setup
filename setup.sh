@@ -9,6 +9,8 @@ fi
 # Variables
 PACKAGE_FILE="package.txt"
 DNF_CONF="dnf.conf"
+GIT_NAME="Rahul Vadhyar"
+GIT_EMAIL="vadhyarrahul@gmail.com"
 
 # Function to update dnf.conf
 if [ -f "$DNF_CONF" ]; then
@@ -43,11 +45,11 @@ echo "UUID=8E8B-6608                            /run/media/baby1           exfat
 
 
 echo "Updating Git configuration..."
-sudo -u "$SUDO_USER" git config --global user.name "Rahul Vadhyar"
-sudo -u "$SUDO_USER" git config --global user.email "vadhyarrahul@gmail.com"
+sudo -u "$SUDO_USER" git config --global user.name "$GIT_NAME"
+sudo -u "$SUDO_USER" git config --global user.email "$GIT_EMAIL"
 
 echo "Installing Python packages..."
-sudo -u "$SUDO_USER" pip install torch torchvision torchaudip matplotlib pandas scipy scikit-learn numpy notebook ipykernel
+sudo -u "$SUDO_USER" pip install torch torchvision torchaudio matplotlib pandas scipy scikit-learn numpy notebook ipykernel
 
 echo "Making ZSH default shell..."
 sudo -u "$SUDO_USER" chsh -s $(which zsh)
@@ -78,4 +80,11 @@ mokutil --import /etc/pki/akmods/certs/public_key.der
 
 echo "Github login"
 sudo -u "$SUDO_USER" gh auth login
-echo "Setup complete! Please reboot to proceed with secure boot key installation and nvidia driver installation."
+
+echo "Setting nvidia driver script to run on reboot"
+chmod +x nvidia.sh
+current_directory = $(pwd)
+sed -i "s|ExecStart=|ExecStart=$(current_directory)/installnvidia.service"
+cp installnvidia.service /etc/systemd/system/installnvidia.service
+systemctl enable installnvidia.service
+reboot now
