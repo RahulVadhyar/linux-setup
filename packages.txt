@@ -1,1 +1,0 @@
-zsh git python3.11 python3-devel python3-pip bpytop nvtop gh cloc code kate cmake g++ gdb clang lldb whereami xlsclients neofetch ckb-next chromium flatpak git-lfs vlc ffmpeg kmod akmods mokutil openssl gcc kernel-headers kernel-devel util-linux vulkan vulkan-validation-layers tokodon blender kdenlive
