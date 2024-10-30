@@ -13,20 +13,17 @@ sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+
 sudo dnf upgrade -y
 
 echo "Installing packages.."
-sudo dnf install -y zsh git python3-devel python3-pip bpytop nvtop gh glab cloc code kate cmake g++ gdb clang lldb xlsclients neofetch chromium flatpak git-lfs vlc ffmpeg kmod akmods mokutil openssl gcc kernel-headers kernel-devel util-linux
+sudo dnf install -y zsh git python3-devel python3-pip gh glab cloc code kate cmake g++ gdb clang lldb xlsclients neofetch chromium flatpak git-lfs vlc ffmpeg kmod akmods mokutil openssl gcc kernel-headers kernel-devel util-linux
 
-sudo dnf groupinstall -y "Development Tools"
-sudo dnf groupupdate -y multimedia
+sudo dnf group install -y development-tools multimedia
 
 echo "Updating Git configuration..."
 git config --global user.name "$GIT_NAME"
 git config --global user.email "$GIT_EMAIL"
-
-# echo "Installing Python packages..."
-pip install torch torchvision torchaudio matplotlib pandas scipy scikit-learn numpy notebook ipykernel
 
 echo "Making ZSH default shell..."
 
@@ -47,3 +44,4 @@ echo ".zshrc has been updated "
 echo "Secure boot key generation..."
 sudo kmodgenca -a
 sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+#install from flatpak - cpu -X, mission center
