@@ -17,7 +17,7 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 sudo dnf upgrade -y
 
 echo "Installing packages.."
-sudo dnf install -y zsh git python3-devel python3-pip gh glab cloc code kate cmake g++ gdb clang lldb xlsclients neofetch chromium flatpak git-lfs vlc ffmpeg kmod akmods mokutil openssl gcc kernel-headers kernel-devel util-linux
+sudo dnf install -y zsh git python3-devel python3-pip gh glab cloc code kate cmake g++ gdb clang lldb xlsclients fastfetch chromium flatpak git-lfs vlc kmod akmods mokutil openssl gcc kernel-headers kernel-devel util-linux
 
 sudo dnf group install -y development-tools multimedia
 
@@ -28,18 +28,6 @@ git config --global user.email "$GIT_EMAIL"
 echo "Making ZSH default shell..."
 
 chsh -s $(which zsh)
-curl -fsSL -o install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-chmod +x install.sh
-./install.sh
-
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
-git clone https://github.com/marlonrichert/zsh-autocomplete.git ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
-
-# Use sed to replace the plugins line
-sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)/' "$HOME/.zshrc"
-echo ".zshrc has been updated "
 
 echo "Secure boot key generation..."
 sudo kmodgenca -a
