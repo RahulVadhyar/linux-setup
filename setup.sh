@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Variables
-DNF_CONF="dnf.conf"
 GIT_NAME="Rahul Vadhyar"
 GIT_EMAIL="vadhyarrahul@gmail.com"
 
@@ -32,4 +31,3 @@ chsh -s $(which zsh)
 echo "Secure boot key generation..."
 sudo kmodgenca -a
 sudo mokutil --import /etc/pki/akmods/certs/public_key.der
-#install from flatpak - cpu -X, mission center
