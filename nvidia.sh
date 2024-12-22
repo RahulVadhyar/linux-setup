@@ -40,3 +40,5 @@ sudo reboot now
 
 #TUI with dnf config, installation of packages, git config, zsh config, nvidia driver installation, omz install, zsh pluginss, kde customization, rust setup, armcord, mission center, 
 #vs code auto setup, mouse and keyboard settings, auto setting of wallpaper, toolbar customization
+
+#download mission center and proton vpn, simplenote, ktorrent, legcord, 
