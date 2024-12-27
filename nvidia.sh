@@ -13,9 +13,20 @@ cp ~/.zshrc ~/.zshrc.bak
 cp .zshrc ~/.zshrc
 echo ".zshrc has been updated "
 
+#install mission center, armcord, ktorrent
+flatpak install flathub io.missioncenter.MissionCenter -y
+flatpak install flathub xyz.armcord.ArmCord -y
+flatpak install flathub com.protonvpn.www -y
+sudo dnf install -y ktorrent rustup
+rustup-init -y
+
 sudo akmods --force
 sudo dracut --force
 sudo reboot now
+
+
+#things to add
+#setup of wallpaper, mouse and keyboard settngs, vscode autosetup, toolbar customization, breeze dark global theme
 
 # Things i want customized: 
 # dolphin - /home/rahulvadhyar/.config/dolphinrc
@@ -37,8 +48,3 @@ sudo reboot now
 # /home/rahulvadhyar/.config/spectaclerc
 # /home/rahulvadhyar/.config/kdedefaults/kwinrc
 # /home/rahulvadhyar/.config/kdedefaults/kdeglobals
-
-#TUI with dnf config, installation of packages, git config, zsh config, nvidia driver installation, omz install, zsh pluginss, kde customization, rust setup, armcord, mission center, 
-#vs code auto setup, mouse and keyboard settings, auto setting of wallpaper, toolbar customization
-
-#download mission center and proton vpn, simplenote, ktorrent, legcord, 
