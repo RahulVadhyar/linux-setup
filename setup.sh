@@ -16,7 +16,7 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 sudo dnf upgrade -y
 
 echo "Installing packages.."
-sudo dnf install -y zsh git python3-devel python3-pip gh glab cloc code kate cmake g++ gdb clang lldb xlsclients fastfetch chromium flatpak git-lfs vlc kmod akmods mokutil openssl gcc kernel-headers kernel-devel util-linux
+sudo dnf install -y zsh git python3-devel python3-pip gh glab cloc code kate cmake g++ gdb clang lldb xlsclients fastfetch chromium flatpak git-lfs vlc kmod akmods mokutil openssl gcc kernel-headers kernel-devel util-linux clangd
 
 sudo dnf group install -y development-tools multimedia
 
