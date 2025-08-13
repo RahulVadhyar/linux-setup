@@ -1,0 +1,11 @@
+[Unit]
+Description=Rclone Mount for Hetzner Crypt
+After=network.target
+
+[Service]
+User=rahulvadhyar
+ExecStart=/usr/bin/rclone mount crypt-cloud: /home/rahulvadhyar/stormy --allow-other --vfs-cache-mode full --cache-dir /run/media/baby1/cache --vfs-cache-max-size 500G
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
